@@ -1,22 +1,36 @@
 import os
 import fnmatch
-NoRoot = 'PySestem:/User/'
+import shutil
+
 os.chdir(r'PySestem:/User/')
+NoRoot = 'PySestem:/User/'
 
 def full_file():
         for file in os.listdir('.'):
         	if fnmatch.fnmatch(file, '*.py'):
         		print(file)
 
-def open_file():
-	OpenenPut = input("Specify the location of the file:")
-	OpenenFile = open(f"{NoRoot}{OpenenPut}")
+def open_file(pute):
+	"""Откриваем файл"""
+	OpenenFile = open(f"{NoRoot}")
 
-def create_new_fille():
-	os.create()
-
-def delete_file():
+def my_files(pute):
+	"""Получаем все файли"""
 	
 
-def delete_pute():
-	
+def create_pack(pute):
+	"""Создаем папку r"put"""
+	os.makedirs(pute)
+
+def delete_pack(pute):
+	"""Удаления папки r"put"""
+	shutil.rmtree(pute)
+
+def create_new_file(pute):
+	"""Создаем новий файл"""
+	open(f"{NoRoot}{pute}", w)
+	sleep(1)
+
+def delete_file(pute):
+	"""Удаляем файл"""
+	os.remove(rf"{NoRoot}{pute}")
