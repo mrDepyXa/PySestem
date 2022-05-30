@@ -2,7 +2,6 @@ import os
 import fnmatch
 import shutil
 
-os.chdir(r'PySestem:/User/')
 NoRoot = 'PySestem:/User/'
 
 def full_file():
@@ -29,7 +28,6 @@ def delete_pack(pute):
 def create_new_file(pute):
 	"""Создаем новий файл"""
 	open(f"{NoRoot}{pute}", w)
-	sleep(1)
 
 def delete_file(pute):
 	"""Удаляем файл"""
