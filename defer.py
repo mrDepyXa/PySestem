@@ -42,14 +42,18 @@ def create_pap(pute):
 
 
 def delete_pap(pute):
-	reale = input("Are you sure you want to delete the folder? [y/n]: ")
-	if reale == "y":
-		shutil.rmtree(pute)
-		print(f"{NoRoot}{pute} >! Pep deleted")
-	elif reale == "n":
-		print("pySestem >> Cancel to start.")
+	re = os.path.isdir(f"{NoRoot}{pute}")
+	if re == True:
+		reale = input("Are you sure you want to delete the folder? [y/n]: ")
+		if reale == "y":
+			shutil.rmtree(pute)
+			print(f"{NoRoot}{pute} >! Pep deleted")
+		elif reale == "n":
+			print("pySestem >> Cancel to start.")
+		else:
+			print("pySestem, blat what?! >> Cancel to start.")
 	else:
-		print("pySestem, blat what?! >> Cancel to start.")
+		print(f"{NoRoot}{pute} >! does not exist.")
 
 
 def create_new_file(pute):
