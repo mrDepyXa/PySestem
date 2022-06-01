@@ -31,7 +31,8 @@ For example: (PySestem:/User/pack/file.fomat)""")
 		delete_file(pute)
 	elif DIA == "delete_pap":
 		print("Enter the location of the folder to delete")
-		pute(f"{NoRoot}")
+		pute = input(f"{NoRoot}")
+		delete_pap(pute)
 	elif DIA == "full_file":
 		full_file()
 	elif DIA == "open_internet":
